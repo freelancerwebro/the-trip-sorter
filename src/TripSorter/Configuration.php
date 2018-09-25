@@ -18,12 +18,12 @@ class Configuration{
 			"arrival"       => "New York JFK",
 		],
 		[
-			"departure"		=> "Barcelona",
-			"arrival"       => "Gerona Airport",
-		],
-		[
 			"departure"		=> "Gerona Airport",
 			"arrival"       => "Stockholm",
+		],
+		[
+			"departure"		=> "Barcelona",
+			"arrival"       => "Gerona Airport",
 		]
 	];
 }

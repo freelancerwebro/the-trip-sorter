@@ -1,10 +1,10 @@
 <?php
 
-namespace TripSorter;
+namespace tts;
 
-use TripSorter\TripSorter\Configuration;
-use TripSorter\TripSorter\BoardingCards;
-use TripSorter\TripSorter\TripCardsSorter;
+use tts\TripSorter\Configuration;
+use tts\TripSorter\BoardingCards;
+use tts\TripSorter\TripCardsSorter;
 
 /**
  * Initializes the TripSorter Application and provides the required dependencies
@@ -16,9 +16,15 @@ class App{
 	function init()
 	{	
 
-		try{
+		try{	
 
-			//$tripSorter = new TripSorter();
+			$boardingCards = new BoardingCards();
+			$boardingCards->setBoardingCards(Configuration::BOARDING_CARDS);
+
+			$tripCardsSorter = new TripCardsSorter($boardingCards);
+
+			print_r($tripCardsSorter->createJourney());
+			
 		}
 		catch(Exception $e)
 		{

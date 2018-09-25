@@ -2,5 +2,5 @@
 
 require "vendor/autoload.php";
 
-$app = new \TripSorter\App();
+$app = new \tts\App();
 $app->init();
