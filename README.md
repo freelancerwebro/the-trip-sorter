@@ -10,7 +10,7 @@ php index.php
 ```
 
 #Run the tests
-Before running the tests install Composer on your local repo and then run the command 'composer update'.
+Before running the tests make sure you have Composer installed and then run the command 'composer update'.
 ```
 vendor/bin/phpunit tests/
 ```
