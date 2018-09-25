@@ -5,6 +5,7 @@ namespace tts;
 use tts\TripSorter\Configuration;
 use tts\TripSorter\BoardingCards;
 use tts\TripSorter\TripCardsSorter;
+use tts\Helper\ArrayFormatter;
 
 /**
  * Initializes the TripSorter Application and provides the required dependencies
@@ -22,13 +23,14 @@ class App{
 			$boardingCards->setBoardingCards(Configuration::BOARDING_CARDS);
 
 			$tripCardsSorter = new TripCardsSorter($boardingCards);
+			$journey = $tripCardsSorter->createJourney();
 
-			print_r($tripCardsSorter->createJourney());
+			echo ArrayFormatter::display($journey);
 			
 		}
 		catch(Exception $e)
 		{
-			print_r($e->getMessage());
+			echo ArrayFormatter::display($e->getMessage());
 		}
 	}
 }

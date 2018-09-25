@@ -1,9 +1,9 @@
 <?php
-
 namespace tts\TripSorter;
 
 use tts\TripSorter\BoardingCards;
 
+ini_set('memory_limit', '-1');
 /*
 *	The main trip cards sorting class
 *	
@@ -88,7 +88,7 @@ class TripCardsSorter{
 		{
 			throw new \Exception('The array cannot be empty');
 		}
-		
+
 		$temp 	   = $array[$i];
 		$array[$i] = $array[$j];
 		$array[$j] = $temp;
