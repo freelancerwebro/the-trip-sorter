@@ -2,6 +2,9 @@
 
 namespace TripSorter;
 
+use TripSorter\TripSorter\Configuration;
+use TripSorter\TripSorter\BoardingCards;
+use TripSorter\TripSorter\TripCardsSorter;
 
 /**
  * Initializes the TripSorter Application and provides the required dependencies

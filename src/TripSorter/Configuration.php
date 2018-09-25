@@ -1,6 +1,6 @@
 <?php
 
-namespace TripSorter\TripSorter;
+namespace tts\TripSorter;
 
 /**
  * The application configuration file
