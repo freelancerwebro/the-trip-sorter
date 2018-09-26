@@ -3,7 +3,6 @@ namespace tts\TripSorter;
 
 use tts\TripSorter\BoardingCards;
 
-ini_set('memory_limit', '-1');
 /*
 *	The main trip cards sorting class
 *	
