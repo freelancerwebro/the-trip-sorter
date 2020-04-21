@@ -1,11 +1,11 @@
 <?php
-
 namespace tts;
 
 use tts\TripSorter\Configuration;
 use tts\TripSorter\BoardingCards;
 use tts\TripSorter\TripCardsSorter;
 use tts\Helper\ArrayFormatter;
+use tts\Sorting\BubbleSort;
 
 /**
  * Initializes the TripSorter Application and provides the required dependencies
@@ -13,24 +13,20 @@ use tts\Helper\ArrayFormatter;
  */
 class App{
 
-	
-	function init()
-	{	
+    function init()
+    {
+        try{
+            $boardingCards = new BoardingCards();
+            $boardingCards->setBoardingCards(Configuration::BOARDING_CARDS);
 
-		try{	
+            $tripCardsSorter = new TripCardsSorter($boardingCards, new BubbleSort());
+            $journey = $tripCardsSorter->createJourney();
 
-			$boardingCards = new BoardingCards();
-			$boardingCards->setBoardingCards(Configuration::BOARDING_CARDS);
-
-			$tripCardsSorter = new TripCardsSorter($boardingCards);
-			$journey = $tripCardsSorter->createJourney();
-
-			echo ArrayFormatter::display($journey);
-			
-		}
-		catch(Exception $e)
-		{
-			echo ArrayFormatter::display($e->getMessage());
-		}
-	}
+            ArrayFormatter::display($journey);
+        }
+        catch(Exception $e)
+        {
+            ArrayFormatter::display($e->getMessage());
+        }
+    }
 }

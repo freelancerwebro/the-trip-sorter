@@ -19,6 +19,6 @@ class ArrayFormatter{
 		$string .= print_r($array, true);
 		$string .= "</pre>";
 
-		return $string;
+		echo $string;
 	}
 }
