@@ -3,36 +3,34 @@
 namespace tts\TripSorter;
 
 /**
-*	BoardingCards Class
+*   BoardingCards Class
 *
 */
 class BoardingCards{
 
-	/**
-	* The boarding cards array
-	*  
-	* @var array
-	*/
-	private $boardingCards = [];
+    /**
+    * The boarding cards array
+    *  
+    * @var array
+    */
+    private $boardingCards = [];
 
-	/**
-	* return the boarding cards
-	*	
-	* @return array
-	*/
-	public function getBoardingCards()
-	{
-		return $this->boardingCards;
-	}
+    /**
+     * set the boarding cards in constructor
+     * @param array $boardingCards
+     */
+    public function __construct($boardingCards = [])
+    {
+        $this->boardingCards = $boardingCards;
+    }
 
-	/**
-	* set the boarding cards	
-	*
-	* @param array $boardingCards
-	*/
-	public function setBoardingCards($boardingCards = [])
-	{
-		$this->boardingCards = $boardingCards;
-	}
-
+    /**
+    * return the boarding cards
+    *   
+    * @return array
+    */
+    public function getBoardingCards()
+    {
+        return $this->boardingCards;
+    }
 }

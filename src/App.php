@@ -16,8 +16,7 @@ class App{
     function init()
     {
         try{
-            $boardingCards = new BoardingCards();
-            $boardingCards->setBoardingCards(Configuration::BOARDING_CARDS);
+            $boardingCards = new BoardingCards(Configuration::BOARDING_CARDS);
 
             $tripCardsSorter = new TripCardsSorter($boardingCards, new BubbleSort());
             $journey = $tripCardsSorter->createJourney();

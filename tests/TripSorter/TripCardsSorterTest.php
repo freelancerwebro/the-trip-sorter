@@ -20,8 +20,7 @@ class TripCardsSorterTest extends PHPUnit_Framework_TestCase{
     {
         $this->setExpectedException(Exception::class, "The array cannot be empty");
 
-        $boardingCards = new BoardingCards();
-        $boardingCards->setBoardingCards([]);
+        $boardingCards = new BoardingCards([]);
 
         $trip = new TripCardsSorter($boardingCards, new BubbleSort);
         $trip->arraySorter();   

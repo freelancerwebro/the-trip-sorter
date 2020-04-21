@@ -28,8 +28,7 @@ class BoardingCardsTest extends PHPUnit_Framework_TestCase{
     */
     public function testArrayIsNotEmpty()
     {
-        $boardingCards = new BoardingCards();
-        $boardingCards->setBoardingCards("a nice string");
+        $boardingCards = new BoardingCards("a nice string");
         $array = $boardingCards->getBoardingCards();
 
         $this->assertNotEmpty($array);
@@ -41,8 +40,7 @@ class BoardingCardsTest extends PHPUnit_Framework_TestCase{
     */
     public function testIfIsArray()
     {
-        $boardingCards = new BoardingCards();
-        $boardingCards->setBoardingCards(["nice array"]);
+        $boardingCards = new BoardingCards(["nice array"]);
         $array = $boardingCards->getBoardingCards();
 
         $this->assertInternalType('array', $array);
@@ -72,8 +70,7 @@ class BoardingCardsTest extends PHPUnit_Framework_TestCase{
                 "arrival"       => "Stockholm",
             ]
         ];
-        $boardingCards = new BoardingCards();
-        $boardingCards->setBoardingCards($boardingCardsArray);
+        $boardingCards = new BoardingCards($boardingCardsArray);
         $array = $boardingCards->getBoardingCards();
 
         $this->assertSame($array, $boardingCardsArray);
