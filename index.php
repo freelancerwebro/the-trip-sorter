@@ -1,6 +1,4 @@
 <?php
-
 require "vendor/autoload.php";
 
-$app = new \tts\App();
-$app->init();
+\tts\App::init();

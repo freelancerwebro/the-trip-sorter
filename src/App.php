@@ -13,7 +13,7 @@ use tts\Sorting\BubbleSort;
  */
 class App{
 
-    function init()
+    public static function init()
     {
         try{
             $boardingCards = new BoardingCards(Configuration::BOARDING_CARDS);
