@@ -10,7 +10,7 @@ class BubbleSort implements ArraySorterInterface {
     * @param integer $index
     * @return array
     */
-    public function sort($array = [], $index = 0)
+    public function sort(array $array, int $index = 0)
     {
         if(empty($array))
         {
@@ -23,6 +23,12 @@ class BubbleSort implements ArraySorterInterface {
         {
             for($j = $i + 1; $j < $count; $j++)
             {
+                if (empty($array[$i]['departure']) ||
+                    empty($array[$j]['arrival']))
+                {
+                    throw new \Exception('Invalid array format');
+                }
+
                 if($array[$i]['departure'] == $array[$j]['arrival'])
                 {
                     $array = $this->switchArrayElements($array, $i, $j);
@@ -43,7 +49,7 @@ class BubbleSort implements ArraySorterInterface {
     * @param integer $j
     * @return array  $array
     */
-    public function switchArrayElements($array = [], $i, $j)
+    public function switchArrayElements(array $array, int $i, int $j)
     {
         if(empty($array))
         {

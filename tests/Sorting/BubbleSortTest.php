@@ -8,17 +8,38 @@ use tts\Sorting\BubbleSort;
 
 class BubbleSortTest extends PHPUnit_Framework_TestCase {
 
-    /**
-    * Test if the switchElements function works fine 
-    *
-    */
+    private $sorter;
+
+    protected function setUp()
+    {
+        $this->sorter = new BubbleSort();
+    }
+
+    protected function tearDown()
+    {
+        $this->sorter = null;
+    }
+
     public function testSwitchElementsIsCorrect()
     {   
         $array = [1, 5, 10, 2, 3];
         
-        $sort = new BubbleSort();
-        $switchedElements = $sort->switchArrayElements($array, 1, 3);
+        $switchedElements = $this->sorter->switchArrayElements($array, 1, 3);
 
         $this->assertSame($switchedElements, [1, 2, 10, 5, 3]);
+    }
+
+    public function testSortingEmptyArray()
+    {
+        $this->setExpectedException(Exception::class, "The array cannot be empty");
+
+        $this->sorter->sort([]);
+    }
+
+    public function testInvalidArrayFormat()
+    {
+        $this->setExpectedException(Exception::class, "Invalid array format");
+
+        $this->sorter->sort([1, 2, 10, "test", true]);
     }
 }
