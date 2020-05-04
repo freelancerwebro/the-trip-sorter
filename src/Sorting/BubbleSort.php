@@ -10,7 +10,7 @@ class BubbleSort implements ArraySorterInterface {
     * @param integer $index
     * @return array
     */
-    public function sort(array $array, int $index = 0)
+    public function sort(array $array, int $index = 0): array
     {
         if(empty($array))
         {
@@ -49,7 +49,7 @@ class BubbleSort implements ArraySorterInterface {
     * @param integer $j
     * @return array  $array
     */
-    public function switchArrayElements(array $array, int $i, int $j)
+    public function switchArrayElements(array $array, int $i, int $j): array
     {
         if(empty($array))
         {

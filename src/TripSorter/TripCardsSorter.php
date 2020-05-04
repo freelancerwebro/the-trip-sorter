@@ -38,7 +38,7 @@ class TripCardsSorter{
     *
     * @return array
     */
-    public function createJourney()
+    public function createJourney(): array
     {
         $boardingCards = $this->boardingCards->getBoardingCards();
 
@@ -53,7 +53,7 @@ class TripCardsSorter{
     * @param array   $array
     * @return array
     */
-    public function arraySorter($array = []) 
+    public function arraySorter(array $array = []): array
     {
         return $this->arraySorter->sort($array);
     }

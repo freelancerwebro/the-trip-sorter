@@ -13,7 +13,7 @@ class ArrayFormatter{
 	* 
 	* @param array $array
 	*/
-	public static function display($array = [])
+	public static function display(array $array = []): void
 	{
 		$string = "<pre>";
 		$string .= print_r($array, true);
